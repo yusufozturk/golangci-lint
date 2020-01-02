@@ -8,16 +8,17 @@ This action wraps the [GolangCI-Lint][golangci-lint] CLI to enable commands.
 
 An example workflow to test and build follows:
 
-```hcl
-workflow "Lint" {
-  on = "push"
-  resolves = ["Lint"]
-}
-
-action "Lint" {
-  uses = "actions-contrib/golangci-lint@master"
-  args = "run"
-}
+```yaml
+name: GoBuild
+on: [push]
+jobs:
+  build:
+    - name: Check out the code
+      uses: actions/checkout@v2
+    - name: Lint
+      uses: actions-contrib/golangci-lint@master
+      with:
+        args: "run"
 ```
 
 ## License
