@@ -1,8 +1,6 @@
-# GitHub Action for GolangCI-Lint
+# GitHub Action for `golangci-lint`
 
-[golangci-lint]: https://github.com/golangci/golangci-lint
-
-This action wraps the [GolangCI-Lint][golangci-lint] CLI to enable commands.
+Wraps [golangci-lint](https://github.com/golangci/golangci-lint) as a GitHub action
 
 ## Usage
 
@@ -21,10 +19,10 @@ jobs:
 
 ```yaml
 - name: Run golangci-lint
-  uses: actions-contrib/golangci-lint@master
+  uses: actions-contrib/golangci-lint@v1
   with:
-    golangci_lint_version: v1.13
-    args: run
+    golangci_lint_version: v1.13 # Target version tag from https://hub.docker.com/r/golangci/golangci-lint/tags
+    args: run                    # Custom run command/arguments for CMD
 ```
 
 ## License

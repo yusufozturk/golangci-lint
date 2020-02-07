@@ -6,7 +6,7 @@ branding:
   color: blue
 inputs:
   golangci_lint_version:
-    description: Target golangci-lint tagged release
+    description: golangci-lint docker release tag
     default: v1.23
 runs:
   using: docker

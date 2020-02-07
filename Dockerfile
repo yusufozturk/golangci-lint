@@ -11,5 +11,4 @@ LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="blue"
 
 ENTRYPOINT ["golangci-lint"]
-
 CMD [ "run" ]
