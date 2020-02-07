@@ -10,6 +10,8 @@ Release version tag of `golangci-lint` to install. Defaults to `v1.13`.
 
 > The default value should be in sync with [Docker Hub][tags] latest.
 
+[tags]: https://hub.docker.com/r/golangci/golangci-lint/tags
+
 ### `args`
 
 Command and/or arguments to pass to `golangci-lint`. Defaults to `run`.
