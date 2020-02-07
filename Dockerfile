@@ -1,12 +1,14 @@
-FROM golangci/golangci-lint:latest
+ARG golangci_lint_version=v1.23
+FROM golangci/golangci-lint:${golangci_lint_version}
 
 LABEL repository="https://github.com/actions-contrib/golangci-lint"
 LABEL homepage="https://github.com/actions-contrib/golangci-lint"
 LABEL maintainer="Chase Pierce <syntaqx@gmail.com>"
 
-LABEL "com.github.actions.name"="GolangCI-Lint Action"
-LABEL "com.github.actions.description"="Wraps the golangci-lint tool and runs it by default."
+LABEL "com.github.actions.name"="golangci-lint"
+LABEL "com.github.actions.description"="Wraps golangci-lint as a GitHub action"
 LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="blue"
 
 ENTRYPOINT ["golangci-lint"]
+CMD [ "run" ]
