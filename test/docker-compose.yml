@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+
+  action:
+    build: ../
+    command: run -v
+    environment:
+      GITHUB_WORKSPACE: /github/workspace
+    volumes:
+      - .:/github/workspace

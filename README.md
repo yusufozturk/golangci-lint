@@ -1,36 +1,29 @@
-# GitHub Action for GolangCI-Lint
+# GitHub Action for `golangci-lint`
 
-[golangci-lint]: https://github.com/golangci/golangci-lint
+Wraps [golangci-lint](https://github.com/golangci/golangci-lint) as a GitHub action
 
-This action wraps the [GolangCI-Lint][golangci-lint] CLI to enable commands.
+## Inputs
 
-## Usage
+### `golangci_lint_version`
 
-An example workflow to test and build follows:
+Release version tag of `golangci-lint` to install. Defaults to `v1.13`.
+
+> The default value should be in sync with [Docker Hub][tags] latest.
+
+### `args`
+
+Command and/or arguments to pass to `golangci-lint`. Defaults to `run`.
+
+## Example usage
 
 ```yaml
-name: GoBuild
-on: [push]
-jobs:
-  build:
-    - name: Check out the code
-      uses: actions/checkout@v2
-    - name: Lint
-      uses: actions-contrib/golangci-lint@master
-      with:
-        args: "run"
+- uses: actions/checkout@v2
+- name: Run golangci-lint
+  uses: actions-contrib/golangci-lint@v1
 ```
 
 ## License
 
-[MIT]: https://opensource.org/licenses/MIT
+[mit]: https://opensource.org/licenses/MIT
 
-This project is open source software released under the [MIT license][MIT].
-
-As with all Docker images, these likely also contain other software which may be
-under other licenses (such as Bash, etc from the base distribution, along with
-any direct or indirect dependencies of the primary software being contained).
-
-As for any pre-built image usage, it is the image user's responsibility to
-ensure that any use of this image complies with any relevant licenses for all
-software contained within.
+This project is open source software released under the [MIT license][mit].
